@@ -1,0 +1,57 @@
+{
+  "$schema": "https://www.krakend.io/schema/v3.json",
+  "version": "3",
+  "name": "BiopatternGateway",
+  "extra_config": {},
+  "timeout": "5000ms",
+  "cache_ttl": "0s",
+  "output_encoding": "no-op",
+  "port": 9000,
+  "endpoints": [
+    {
+      "endpoint": "/api/search-objects/blat/search-option",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/blat/search-options",
+          "host": ["http://search-biological-objects:8080"],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+        {
+      "endpoint": "/api/search-objects/transcription-factor/by-promoter-region",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/transcription-factor/by-promoter-region",
+          "host": ["http://search-biological-objects:8080"],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/search-objects/transcription-factor/by-blat-coordinates",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/transcription-factor/by-blat-coordinates",
+          "host": ["http://search-biological-objects:8080"],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    }
+  ]
+}
