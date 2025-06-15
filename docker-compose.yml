@@ -1,0 +1,24 @@
+services:
+  krakend:
+    image: krakend:2.10.0
+    container_name: krakend-gateway
+    ports:
+      - "8080:9000"
+    volumes:
+      - ./krakend.json:/etc/krakend/krakend.json:ro
+    depends_on:
+      - search-biological-objects
+    networks:
+      - general-network
+
+  search-biological-objects:
+    image: ygcl/search-biological-objects:2.0
+    container_name: search-objects
+    ports:
+      - "8001:8080"
+    networks:
+      - general-network
+
+networks:
+  general-network:
+    driver: bridge
