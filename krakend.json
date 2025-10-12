@@ -61,7 +61,7 @@
       "backend": [
         {
           "url_pattern": "/biological-object/search/symbol/{symbol}",
-          "host": ["http://search-biological-objects:8001"],
+          "host": ["http://search-biological-objects:8080"],
           "encoding": "no-op",
           "sd": "static",
           "disable_host_sanitize": false
