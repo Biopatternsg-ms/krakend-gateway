@@ -1,8 +1,8 @@
 pipeline {
     agent {
-        // Ejecuta la etapa en cualquier agente que tenga la etiqueta 'docker'
-        // y pueda ejecutar comandos Docker.
-        label 'agent-jenkins-java-21'
+        docker {
+            image 'agent-jenkins-java-21'
+        }
     }
     environment {
         CONTAINER_NAME = "${env.JOB_NAME.toLowerCase().replaceAll('[^a-z0-9-]', '-')}"
