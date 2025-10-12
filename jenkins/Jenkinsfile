@@ -1,7 +1,9 @@
 pipeline {
-    // Agent setup using a custom Docker image containing Java 21, Maven, and Docker CLI.
-    // The Docker socket is mounted to allow the agent to run Docker commands on the host.
-   
+    agent {
+        // Ejecuta la etapa en cualquier agente que tenga la etiqueta 'docker'
+        // y pueda ejecutar comandos Docker.
+        label 'docker-capable-agent'
+    }
     environment {
         CONTAINER_NAME = "${env.JOB_NAME.toLowerCase().replaceAll('[^a-z0-9-]', '-')}"
     }
