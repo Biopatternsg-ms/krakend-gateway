@@ -54,13 +54,13 @@
       ]
     },
      {
-      "endpoint": "/api/biological-object/search/symbol/{symbol}",
+      "endpoint": "/api/biological-object/search/{type}/{value}",
       "method": "GET",
       "output_encoding": "no-op",
       "extra_config": {},
       "backend": [
         {
-          "url_pattern": "/biological-object/search/symbol/{symbol}",
+          "url_pattern": "/biological-object/search/{type}/{value}",
           "host": ["http://search-biological-objects:8080"],
           "encoding": "no-op",
           "sd": "static",
