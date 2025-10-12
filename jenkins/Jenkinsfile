@@ -13,9 +13,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    echo "--- Unstashing artifacts ---"
-                    unstash 'quarkus-app'
-
+                    
                     def localImageName = "${CONTAINER_NAME}:latest"
 
                     echo "--- Building Local Docker Image: ${localImageName} ---"
