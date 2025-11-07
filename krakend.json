@@ -82,6 +82,21 @@
           "disable_host_sanitize": false
         }
       ]
+    },
+    {
+      "endpoint": "/api/integrations/pdb/find-ids",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/integrations/pdb/find-ids",
+          "host": ["http://integrations:8080"],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
     }
   ]
 }
