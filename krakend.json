@@ -118,6 +118,84 @@
           "disable_host_sanitize": false
         }
       ]
+    },
+    {
+      "endpoint": "/api/config-and-control/networks",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/networks",
+          "host": ["http://config-and-control:8080"],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/config-and-control/networks",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/networks",
+          "host": ["http://config-and-control:8080"],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/config-and-control/pipelines/launch",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "extra_config": {},
+      "input_query_strings": [
+        "id"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/pipelines/launch",
+          "host": ["http://config-and-control:8080"],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/config-and-control/pipelines",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/pipelines",
+          "host": ["http://config-and-control:8080"],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/config-and-control/pipelines",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/pipelines",
+          "host": ["http://config-and-control:8080"],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
     }
   ]
 }
