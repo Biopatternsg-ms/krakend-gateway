@@ -125,6 +125,7 @@
       "output_encoding": "no-op",
       "extra_config": {},
       "input_headers": [
+        "Content-Type",
         "x-user-id"
       ],
       "backend": [
@@ -143,6 +144,7 @@
       "output_encoding": "no-op",
       "extra_config": {},
       "input_headers": [
+        "Content-Type",
         "x-user-id"
       ],
       "backend": [
@@ -164,6 +166,7 @@
         "id"
       ],
       "input_headers": [
+        "Content-Type",
         "x-user-id"
       ],
       "backend": [
@@ -182,6 +185,7 @@
       "output_encoding": "no-op",
       "extra_config": {},
       "input_headers": [
+        "Content-Type",
         "x-user-id"
       ],
       "backend": [
@@ -200,6 +204,7 @@
       "output_encoding": "no-op",
       "extra_config": {},
       "input_headers": [
+        "Content-Type",
         "x-user-id"
       ],
       "backend": [
