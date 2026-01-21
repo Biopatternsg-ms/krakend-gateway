@@ -124,6 +124,9 @@
       "method": "POST",
       "output_encoding": "no-op",
       "extra_config": {},
+      "input_headers": [
+        "x-user-id"
+      ],
       "backend": [
         {
           "url_pattern": "/config-and-control/networks",
@@ -139,6 +142,9 @@
       "method": "PUT",
       "output_encoding": "no-op",
       "extra_config": {},
+      "input_headers": [
+        "x-user-id"
+      ],
       "backend": [
         {
           "url_pattern": "/config-and-control/networks",
@@ -157,6 +163,9 @@
       "input_query_strings": [
         "id"
       ],
+      "input_headers": [
+        "x-user-id"
+      ],
       "backend": [
         {
           "url_pattern": "/config-and-control/pipelines/launch",
@@ -172,6 +181,9 @@
       "method": "POST",
       "output_encoding": "no-op",
       "extra_config": {},
+      "input_headers": [
+        "x-user-id"
+      ],
       "backend": [
         {
           "url_pattern": "/config-and-control/pipelines",
@@ -187,6 +199,9 @@
       "method": "PUT",
       "output_encoding": "no-op",
       "extra_config": {},
+      "input_headers": [
+        "x-user-id"
+      ],
       "backend": [
         {
           "url_pattern": "/config-and-control/pipelines",
