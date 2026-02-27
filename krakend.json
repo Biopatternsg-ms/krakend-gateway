@@ -216,6 +216,42 @@
           "disable_host_sanitize": false
         }
       ]
+    },
+    {
+      "endpoint": "/api/config-and-control/user/register",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "extra_config": {},
+      "input_headers": [
+        "Content-Type"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/user/register",
+          "host": ["http://config-and-control:8080"],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/config-and-control/auth",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "extra_config": {},
+      "input_headers": [
+        "Content-Type"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/auth",
+          "host": ["http://config-and-control:8080"],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
     }
   ]
 }
