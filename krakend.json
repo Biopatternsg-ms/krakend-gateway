@@ -129,8 +129,6 @@
           "jwk_url": "http://keycloak:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
           "issuer": "http://keycloak:8080/realms/biopatternsg",
-          "roles_key": "realm_access.roles",
-          "roles": ["admin", "user"],
           "propagate_claims": [
             ["sub", "x-user-id"]
           ]
