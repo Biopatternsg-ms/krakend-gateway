@@ -123,7 +123,17 @@
       "endpoint": "/api/config-and-control/networks",
       "method": "POST",
       "output_encoding": "no-op",
-      "extra_config": {},
+      "extra_config": {
+        "auth/validator": {
+          "alg": "RS256",
+          "jwk_url": "http://keycloak:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "cache": true,
+          "issuer": "http://keycloak:8080/realms/biopatternsg",
+          "propagate_claims": [
+            ["sub", "x-user-id"]
+          ]
+        }
+      },
       "input_headers": [
         "Content-Type",
         "x-user-id"
@@ -142,7 +152,17 @@
       "endpoint": "/api/config-and-control/networks",
       "method": "PUT",
       "output_encoding": "no-op",
-      "extra_config": {},
+      "extra_config": {
+        "auth/validator": {
+          "alg": "RS256",
+          "jwk_url": "http://keycloak:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "cache": true,
+          "issuer": "http://keycloak:8080/realms/biopatternsg",
+          "propagate_claims": [
+            ["sub", "x-user-id"]
+          ]
+        }
+      },
       "input_headers": [
         "Content-Type",
         "x-user-id"
@@ -161,7 +181,17 @@
       "endpoint": "/api/config-and-control/pipelines/launch",
       "method": "POST",
       "output_encoding": "no-op",
-      "extra_config": {},
+      "extra_config": {
+        "auth/validator": {
+          "alg": "RS256",
+          "jwk_url": "http://keycloak:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "cache": true,
+          "issuer": "http://keycloak:8080/realms/biopatternsg",
+          "propagate_claims": [
+            ["sub", "x-user-id"]
+          ]
+        }
+      },
       "input_query_strings": [
         "id"
       ],
@@ -183,7 +213,17 @@
       "endpoint": "/api/config-and-control/pipelines",
       "method": "POST",
       "output_encoding": "no-op",
-      "extra_config": {},
+      "extra_config": {
+        "auth/validator": {
+          "alg": "RS256",
+          "jwk_url": "http://keycloak:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "cache": true,
+          "issuer": "http://keycloak:8080/realms/biopatternsg",
+          "propagate_claims": [
+            ["sub", "x-user-id"]
+          ]
+        }
+      },
       "input_headers": [
         "Content-Type",
         "x-user-id"
@@ -202,7 +242,17 @@
       "endpoint": "/api/config-and-control/pipelines",
       "method": "PUT",
       "output_encoding": "no-op",
-      "extra_config": {},
+      "extra_config": {
+        "auth/validator": {
+          "alg": "RS256",
+          "jwk_url": "http://keycloak:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "cache": true,
+          "issuer": "http://keycloak:8080/realms/biopatternsg",
+          "propagate_claims": [
+            ["sub", "x-user-id"]
+          ]
+        }
+      },
       "input_headers": [
         "Content-Type",
         "x-user-id"
