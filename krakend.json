@@ -16,14 +16,16 @@
       "backend": [
         {
           "url_pattern": "/blat/search-options",
-          "host": ["http://search-biological-objects:8080"],
+          "host": [
+            "http://search-biological-objects:8080"
+          ],
           "encoding": "no-op",
           "sd": "static",
           "disable_host_sanitize": false
         }
       ]
     },
-        {
+    {
       "endpoint": "/api/search-objects/transcription-factor/by-promoter-region",
       "method": "POST",
       "output_encoding": "no-op",
@@ -31,7 +33,9 @@
       "backend": [
         {
           "url_pattern": "/transcription-factor/by-promoter-region",
-          "host": ["http://search-biological-objects:8080"],
+          "host": [
+            "http://search-biological-objects:8080"
+          ],
           "encoding": "no-op",
           "sd": "static",
           "disable_host_sanitize": false
@@ -46,14 +50,16 @@
       "backend": [
         {
           "url_pattern": "/transcription-factor/by-blat-coordinates",
-          "host": ["http://search-biological-objects:8080"],
+          "host": [
+            "http://search-biological-objects:8080"
+          ],
           "encoding": "no-op",
           "sd": "static",
           "disable_host_sanitize": false
         }
       ]
     },
-     {
+    {
       "endpoint": "/api/biological-object/search/{type}/{value}",
       "method": "GET",
       "output_encoding": "no-op",
@@ -61,7 +67,9 @@
       "backend": [
         {
           "url_pattern": "/biological-object/search/{type}/{value}",
-          "host": ["http://search-biological-objects:8080"],
+          "host": [
+            "http://search-biological-objects:8080"
+          ],
           "encoding": "no-op",
           "sd": "static",
           "disable_host_sanitize": false
@@ -76,7 +84,9 @@
       "backend": [
         {
           "url_pattern": "/biological-object/complex/{value}",
-          "host": ["http://search-biological-objects:8080"],
+          "host": [
+            "http://search-biological-objects:8080"
+          ],
           "encoding": "no-op",
           "sd": "static",
           "disable_host_sanitize": false
@@ -94,7 +104,9 @@
       "backend": [
         {
           "url_pattern": "/integrations/pdb/find-ids",
-          "host": ["http://integrations:8080"],
+          "host": [
+            "http://integrations:8080"
+          ],
           "encoding": "no-op",
           "sd": "static",
           "disable_host_sanitize": false
@@ -112,7 +124,9 @@
       "backend": [
         {
           "url_pattern": "/integrations/pdb/search",
-          "host": ["http://integrations:8080"],
+          "host": [
+            "http://integrations:8080"
+          ],
           "encoding": "no-op",
           "sd": "static",
           "disable_host_sanitize": false
@@ -126,11 +140,14 @@
       "extra_config": {
         "auth/validator": {
           "alg": "RS256",
-          "jwk_url": "http://keycloak:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "http://keycloak:8080/realms/biopatternsg",
+          "issuer": "http://keycloak-biopatternsg:8080/realms/biopatternsg",
           "propagate_claims": [
-            ["sub", "x-user-id"]
+            [
+              "sub",
+              "x-user-id"
+            ]
           ]
         }
       },
@@ -141,7 +158,9 @@
       "backend": [
         {
           "url_pattern": "/config-and-control/networks",
-          "host": ["http://config-and-control:8080"],
+          "host": [
+            "http://config-and-control:8080"
+          ],
           "encoding": "no-op",
           "sd": "static",
           "disable_host_sanitize": false
@@ -155,11 +174,14 @@
       "extra_config": {
         "auth/validator": {
           "alg": "RS256",
-          "jwk_url": "http://keycloak:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "http://keycloak:8080/realms/biopatternsg",
+          "issuer": "http://keycloak-biopatternsg:8080/realms/biopatternsg",
           "propagate_claims": [
-            ["sub", "x-user-id"]
+            [
+              "sub",
+              "x-user-id"
+            ]
           ]
         }
       },
@@ -170,7 +192,9 @@
       "backend": [
         {
           "url_pattern": "/config-and-control/networks",
-          "host": ["http://config-and-control:8080"],
+          "host": [
+            "http://config-and-control:8080"
+          ],
           "encoding": "no-op",
           "sd": "static",
           "disable_host_sanitize": false
@@ -184,11 +208,14 @@
       "extra_config": {
         "auth/validator": {
           "alg": "RS256",
-          "jwk_url": "http://keycloak:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "http://keycloak:8080/realms/biopatternsg",
+          "issuer": "http://keycloak-biopatternsg:8080/realms/biopatternsg",
           "propagate_claims": [
-            ["sub", "x-user-id"]
+            [
+              "sub",
+              "x-user-id"
+            ]
           ]
         }
       },
@@ -202,7 +229,9 @@
       "backend": [
         {
           "url_pattern": "/config-and-control/pipelines/launch",
-          "host": ["http://config-and-control:8080"],
+          "host": [
+            "http://config-and-control:8080"
+          ],
           "encoding": "no-op",
           "sd": "static",
           "disable_host_sanitize": false
@@ -220,7 +249,10 @@
           "cache": true,
           "issuer": "http://keycloak:8080/realms/biopatternsg",
           "propagate_claims": [
-            ["sub", "x-user-id"]
+            [
+              "sub",
+              "x-user-id"
+            ]
           ]
         }
       },
@@ -231,7 +263,9 @@
       "backend": [
         {
           "url_pattern": "/config-and-control/pipelines",
-          "host": ["http://config-and-control:8080"],
+          "host": [
+            "http://config-and-control:8080"
+          ],
           "encoding": "no-op",
           "sd": "static",
           "disable_host_sanitize": false
@@ -249,7 +283,10 @@
           "cache": true,
           "issuer": "http://keycloak:8080/realms/biopatternsg",
           "propagate_claims": [
-            ["sub", "x-user-id"]
+            [
+              "sub",
+              "x-user-id"
+            ]
           ]
         }
       },
@@ -260,7 +297,9 @@
       "backend": [
         {
           "url_pattern": "/config-and-control/pipelines",
-          "host": ["http://config-and-control:8080"],
+          "host": [
+            "http://config-and-control:8080"
+          ],
           "encoding": "no-op",
           "sd": "static",
           "disable_host_sanitize": false
@@ -270,6 +309,7 @@
     {
       "endpoint": "/api/config-and-control/user/register",
       "method": "POST",
+      "timeout": "10000ms",
       "output_encoding": "no-op",
       "extra_config": {},
       "input_headers": [
@@ -278,7 +318,9 @@
       "backend": [
         {
           "url_pattern": "/config-and-control/user/register",
-          "host": ["http://config-and-control:8080"],
+          "host": [
+            "http://config-and-control:8080"
+          ],
           "encoding": "no-op",
           "sd": "static",
           "disable_host_sanitize": false
@@ -296,7 +338,9 @@
       "backend": [
         {
           "url_pattern": "/config-and-control/auth",
-          "host": ["http://config-and-control:8080"],
+          "host": [
+            "http://config-and-control:8080"
+          ],
           "encoding": "no-op",
           "sd": "static",
           "disable_host_sanitize": false
