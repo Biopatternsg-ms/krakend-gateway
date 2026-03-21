@@ -140,9 +140,11 @@
       "extra_config": {
         "auth/validator": {
           "alg": "RS256",
-          "jwk_url": "https://bioai.redclara.net/realms/biopatternsg/protocol/openid-connect/certs",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
           "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "disable_jwk_security": true,
+          "disable_aud_validation": true,
           "propagate_claims": [
             [
               "sub",
