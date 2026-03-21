@@ -178,6 +178,7 @@
           "cache": true,
           "issuer": "https://bioai.redclara.net/realms/biopatternsg",
           "disable_jwk_security": false,
+          "disable_aud_validation": true,
           "propagate_claims": [
             [
               "sub",
