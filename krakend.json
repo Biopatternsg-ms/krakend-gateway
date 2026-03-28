@@ -178,8 +178,7 @@
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
           "issuer": "https://bioai.redclara.net/realms/biopatternsg",
-          "disable_jwk_security": false,
-          "disable_aud_validation": true,
+          "disable_jwk_security": true,
           "propagate_claims": [
             [
               "sub",
@@ -211,9 +210,10 @@
       "extra_config": {
         "auth/validator": {
           "alg": "RS256",
-          "jwk_url": "https://bioai.redclara.net/realms/biopatternsg/protocol/openid-connect/certs",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
           "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "disable_jwk_security": true,
           "propagate_claims": [
             [
               "sub",
@@ -248,9 +248,10 @@
       "extra_config": {
         "auth/validator": {
           "alg": "RS256",
-          "jwk_url": "http://keycloak:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
           "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "disable_jwk_security": true,
           "propagate_claims": [
             [
               "sub",
@@ -282,9 +283,10 @@
       "extra_config": {
         "auth/validator": {
           "alg": "RS256",
-          "jwk_url": "http://keycloak:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
           "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "disable_jwk_security": true,
           "propagate_claims": [
             [
               "sub",
@@ -310,7 +312,7 @@
       ]
     },
     {
-      "endpoint": "/api/config-and-control/user/register",
+      "endpoint": "/api/config-and-control/users",
       "method": "POST",
       "timeout": "10000ms",
       "output_encoding": "no-op",
@@ -320,7 +322,7 @@
       ],
       "backend": [
         {
-          "url_pattern": "/config-and-control/user/register",
+          "url_pattern": "/config-and-control/users",
           "host": [
             "http://config-and-control:8080"
           ],
@@ -331,7 +333,7 @@
       ]
     },
     {
-      "endpoint": "/api/config-and-control/auth",
+      "endpoint": "/api/config-and-control/users/login",
       "method": "POST",
       "output_encoding": "no-op",
       "extra_config": {},
@@ -340,7 +342,27 @@
       ],
       "backend": [
         {
-          "url_pattern": "/config-and-control/auth",
+          "url_pattern": "/config-and-control/users/login",
+          "host": [
+            "http://config-and-control:8080"
+          ],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/config-and-control/users/password-recovery",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "extra_config": {},
+      "input_headers": [
+        "Content-Type"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/users/password-recovery",
           "host": [
             "http://config-and-control:8080"
           ],
