@@ -178,8 +178,7 @@
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
           "issuer": "https://bioai.redclara.net/realms/biopatternsg",
-          "disable_jwk_security": false,
-          "disable_aud_validation": true,
+          "disable_jwk_security": true,
           "propagate_claims": [
             [
               "sub",
@@ -205,15 +204,93 @@
       ]
     },
     {
-      "endpoint": "/api/config-and-control/pipelines/launch",
-      "method": "POST",
+      "endpoint": "/api/config-and-control/networks",
+      "method": "GET",
       "output_encoding": "no-op",
       "extra_config": {
         "auth/validator": {
           "alg": "RS256",
-          "jwk_url": "https://bioai.redclara.net/realms/biopatternsg/protocol/openid-connect/certs",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
           "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "disable_jwk_security": true,
+          "propagate_claims": [
+            [
+              "sub",
+              "x-user-id"
+            ]
+          ]
+        }
+      },
+      "input_headers": [
+        "Content-Type",
+        "x-user-id"
+      ],
+      "input_query_strings": [
+        "id",
+        "name",
+        "description",
+        "page",
+        "size"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/networks",
+          "host": [
+            "http://config-and-control:8080"
+          ],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/config-and-control/networks/{id}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "RS256",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "cache": true,
+          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "disable_jwk_security": true,
+          "propagate_claims": [
+            [
+              "sub",
+              "x-user-id"
+            ]
+          ]
+        }
+      },
+      "input_headers": [
+        "Content-Type",
+        "x-user-id"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/networks/{id}",
+          "host": [
+            "http://config-and-control:8080"
+          ],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/config-and-control/pipelines/launch",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "RS256",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "cache": true,
+          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "disable_jwk_security": true,
           "propagate_claims": [
             [
               "sub",
@@ -248,9 +325,10 @@
       "extra_config": {
         "auth/validator": {
           "alg": "RS256",
-          "jwk_url": "http://keycloak:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
           "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "disable_jwk_security": true,
           "propagate_claims": [
             [
               "sub",
@@ -282,9 +360,10 @@
       "extra_config": {
         "auth/validator": {
           "alg": "RS256",
-          "jwk_url": "http://keycloak:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
           "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "disable_jwk_security": true,
           "propagate_claims": [
             [
               "sub",
@@ -310,17 +389,39 @@
       ]
     },
     {
-      "endpoint": "/api/config-and-control/user/register",
-      "method": "POST",
-      "timeout": "10000ms",
+      "endpoint": "/api/config-and-control/pipelines",
+      "method": "GET",
       "output_encoding": "no-op",
-      "extra_config": {},
+      "extra_config": {
+        "auth/validator": {
+          "alg": "RS256",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "cache": true,
+          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "disable_jwk_security": true,
+          "propagate_claims": [
+            [
+              "sub",
+              "x-user-id"
+            ]
+          ]
+        }
+      },
       "input_headers": [
-        "Content-Type"
+        "Content-Type",
+        "x-user-id"
+      ],
+      "input_query_strings": [
+        "id",
+        "networkId",
+        "name",
+        "description",
+        "page",
+        "size"
       ],
       "backend": [
         {
-          "url_pattern": "/config-and-control/user/register",
+          "url_pattern": "/config-and-control/pipelines",
           "host": [
             "http://config-and-control:8080"
           ],
@@ -331,7 +432,133 @@
       ]
     },
     {
-      "endpoint": "/api/config-and-control/auth",
+      "endpoint": "/api/config-and-control/pipelines/{id}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "RS256",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "cache": true,
+          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "disable_jwk_security": true,
+          "propagate_claims": [
+            [
+              "sub",
+              "x-user-id"
+            ]
+          ]
+        }
+      },
+      "input_headers": [
+        "Content-Type",
+        "x-user-id"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/pipelines/{id}",
+          "host": [
+            "http://config-and-control:8080"
+          ],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/config-and-control/pipelines/update-step",
+      "method": "PATCH",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "RS256",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "cache": true,
+          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "disable_jwk_security": true,
+          "propagate_claims": [
+            [
+              "sub",
+              "x-user-id"
+            ]
+          ]
+        }
+      },
+      "input_headers": [
+        "Content-Type",
+        "x-user-id"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/pipelines/update-step",
+          "host": [
+            "http://config-and-control:8080"
+          ],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/config-and-control/admin/users",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "RS256",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "cache": true,
+          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "disable_jwk_security": true,
+          "propagate_claims": [
+            [
+              "sub",
+              "x-user-id"
+            ]
+          ]
+        }
+      },
+      "input_headers": [
+        "Content-Type",
+        "x-user-id"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/admin/users",
+          "host": [
+            "http://config-and-control:8080"
+          ],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/config-and-control/users",
+      "method": "POST",
+      "timeout": "10000ms",
+      "output_encoding": "no-op",
+      "extra_config": {},
+      "input_headers": [
+        "Content-Type"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/users",
+          "host": [
+            "http://config-and-control:8080"
+          ],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/config-and-control/users/login",
       "method": "POST",
       "output_encoding": "no-op",
       "extra_config": {},
@@ -340,7 +567,27 @@
       ],
       "backend": [
         {
-          "url_pattern": "/config-and-control/auth",
+          "url_pattern": "/config-and-control/users/login",
+          "host": [
+            "http://config-and-control:8080"
+          ],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/config-and-control/users/{id}/password-recovery",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "extra_config": {},
+      "input_headers": [
+        "Content-Type"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/users/{id}/password-recovery",
           "host": [
             "http://config-and-control:8080"
           ],
