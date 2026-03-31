@@ -282,7 +282,7 @@
     },
     {
       "endpoint": "/api/config-and-control/pipelines/launch",
-      "method": "GET",
+      "method": "POST",
       "output_encoding": "no-op",
       "extra_config": {
         "auth/validator": {
@@ -299,9 +299,6 @@
           ]
         }
       },
-      "input_query_strings": [
-        "id"
-      ],
       "input_headers": [
         "Content-Type",
         "x-user-id"
