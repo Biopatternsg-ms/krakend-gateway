@@ -575,8 +575,8 @@
       ]
     },
     {
-      "endpoint": "/api/config-and-control/users/{id}/password-recovery",
-      "method": "GET",
+      "endpoint": "/api/config-and-control/users/refresh-token",
+      "method": "POST",
       "output_encoding": "no-op",
       "extra_config": {},
       "input_headers": [
@@ -584,7 +584,27 @@
       ],
       "backend": [
         {
-          "url_pattern": "/config-and-control/users/{id}/password-recovery",
+          "url_pattern": "/config-and-control/users/refresh-token",
+          "host": [
+            "http://config-and-control:8080"
+          ],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/config-and-control/users/recovery-password",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "extra_config": {},
+      "input_headers": [
+        "Content-Type"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/users/recovery-password",
           "host": [
             "http://config-and-control:8080"
           ],
