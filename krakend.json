@@ -1,6 +1,6 @@
 {
   "$schema": "https://www.krakend.io/schema/v3.json",
-  "version": "3",
+  "version": 3,
   "name": "BiopatternGateway",
   "extra_config": {},
   "timeout": "5000ms",
