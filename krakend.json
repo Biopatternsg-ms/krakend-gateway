@@ -1,6 +1,6 @@
 {
   "$schema": "https://www.krakend.io/schema/v3.json",
-  "version": "3",
+  "version": 3,
   "name": "BiopatternGateway",
   "extra_config": {},
   "timeout": "5000ms",
@@ -148,13 +148,18 @@
             [
               "sub",
               "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
             ]
           ]
         }
       },
       "input_headers": [
         "Content-Type",
-        "x-user-id"
+        "x-user-id",
+        "x-user-roles"
       ],
       "backend": [
         {
@@ -183,13 +188,18 @@
             [
               "sub",
               "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
             ]
           ]
         }
       },
       "input_headers": [
         "Content-Type",
-        "x-user-id"
+        "x-user-id",
+        "x-user-roles"
       ],
       "backend": [
         {
@@ -218,13 +228,18 @@
             [
               "sub",
               "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
             ]
           ]
         }
       },
       "input_headers": [
         "Content-Type",
-        "x-user-id"
+        "x-user-id",
+        "x-user-roles"
       ],
       "input_query_strings": [
         "id",
@@ -260,13 +275,18 @@
             [
               "sub",
               "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
             ]
           ]
         }
       },
       "input_headers": [
         "Content-Type",
-        "x-user-id"
+        "x-user-id",
+        "x-user-roles"
       ],
       "backend": [
         {
@@ -295,13 +315,18 @@
             [
               "sub",
               "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
             ]
           ]
         }
       },
       "input_headers": [
         "Content-Type",
-        "x-user-id"
+        "x-user-id",
+        "x-user-roles"
       ],
       "backend": [
         {
@@ -330,13 +355,18 @@
             [
               "sub",
               "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
             ]
           ]
         }
       },
       "input_headers": [
         "Content-Type",
-        "x-user-id"
+        "x-user-id",
+        "x-user-roles"
       ],
       "backend": [
         {
@@ -365,13 +395,18 @@
             [
               "sub",
               "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
             ]
           ]
         }
       },
       "input_headers": [
         "Content-Type",
-        "x-user-id"
+        "x-user-id",
+        "x-user-roles"
       ],
       "backend": [
         {
@@ -400,13 +435,18 @@
             [
               "sub",
               "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
             ]
           ]
         }
       },
       "input_headers": [
         "Content-Type",
-        "x-user-id"
+        "x-user-id",
+        "x-user-roles"
       ],
       "backend": [
         {
@@ -435,13 +475,18 @@
             [
               "sub",
               "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
             ]
           ]
         }
       },
       "input_headers": [
         "Content-Type",
-        "x-user-id"
+        "x-user-id",
+        "x-user-roles"
       ],
       "backend": [
         {
@@ -470,13 +515,18 @@
             [
               "sub",
               "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
             ]
           ]
         }
       },
       "input_headers": [
         "Content-Type",
-        "x-user-id"
+        "x-user-id",
+        "x-user-roles"
       ],
       "backend": [
         {
@@ -505,13 +555,18 @@
             [
               "sub",
               "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
             ]
           ]
         }
       },
       "input_headers": [
         "Content-Type",
-        "x-user-id"
+        "x-user-id",
+        "x-user-roles"
       ],
       "backend": [
         {
@@ -540,13 +595,18 @@
             [
               "sub",
               "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
             ]
           ]
         }
       },
       "input_headers": [
         "Content-Type",
-        "x-user-id"
+        "x-user-id",
+        "x-user-roles"
       ],
       "input_query_strings": [
         "id",
@@ -583,13 +643,18 @@
             [
               "sub",
               "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
             ]
           ]
         }
       },
       "input_headers": [
         "Content-Type",
-        "x-user-id"
+        "x-user-id",
+        "x-user-roles"
       ],
       "backend": [
         {
@@ -618,13 +683,18 @@
             [
               "sub",
               "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
             ]
           ]
         }
       },
       "input_headers": [
         "Content-Type",
-        "x-user-id"
+        "x-user-id",
+        "x-user-roles"
       ],
       "backend": [
         {
@@ -653,13 +723,18 @@
             [
               "sub",
               "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
             ]
           ]
         }
       },
       "input_headers": [
         "Content-Type",
-        "x-user-id"
+        "x-user-id",
+        "x-user-roles"
       ],
       "backend": [
         {
@@ -674,17 +749,77 @@
       ]
     },
     {
-      "endpoint": "/api/config-and-control/users",
-      "method": "POST",
-      "timeout": "10000ms",
+      "endpoint": "/api/config-and-control/admin/sync-users",
+      "method": "GET",
       "output_encoding": "no-op",
-      "extra_config": {},
+      "extra_config": {
+        "auth/validator": {
+          "alg": "RS256",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "cache": true,
+          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "disable_jwk_security": true,
+          "propagate_claims": [
+            [
+              "sub",
+              "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
+            ]
+          ]
+        }
+      },
       "input_headers": [
-        "Content-Type"
+        "Content-Type",
+        "x-user-id",
+        "x-user-roles"
       ],
       "backend": [
         {
-          "url_pattern": "/config-and-control/users",
+          "url_pattern": "/config-and-control/admin/sync-users",
+          "host": [
+            "http://config-and-control:8080"
+          ],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/config-and-control/admin/users",
+      "method": "POST",
+      "timeout": "10000ms",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "RS256",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "cache": true,
+          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "disable_jwk_security": true,
+          "propagate_claims": [
+            [
+              "sub",
+              "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
+            ]
+          ]
+        }
+      },
+      "input_headers": [
+        "Content-Type",
+        "x-user-id",
+        "x-user-roles"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/admin/users",
           "host": [
             "http://config-and-control:8080"
           ],
