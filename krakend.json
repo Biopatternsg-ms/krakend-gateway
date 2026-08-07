@@ -1018,7 +1018,7 @@
       ]
     },
     {
-      "endpoint": "/api/pubmed/synonyms/{pipelineId}/by-name",
+      "endpoint": "/api/pubmed/synonyms/{pipelineId}/by-name/{name}",
       "method": "GET",
       "output_encoding": "no-op",
       "extra_config": {
@@ -1047,7 +1047,7 @@
       ],
       "backend": [
         {
-          "url_pattern": "/pubmed/synonyms/{pipelineId}/by-name",
+          "url_pattern": "/pubmed/synonyms/{pipelineId}/by-name/{name}",
           "host": [
             "http://pubmed-integration:8080"
           ],
