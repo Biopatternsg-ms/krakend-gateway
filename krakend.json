@@ -134,6 +134,23 @@
       ]
     },
     {
+      "endpoint": "/api/integrations/transcription-factor/by-config",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/integrations/transcription-factor/by-config",
+          "host": [
+            "http://integrations:8080"
+          ],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
       "endpoint": "/api/config-and-control/networks",
       "method": "POST",
       "output_encoding": "no-op",
