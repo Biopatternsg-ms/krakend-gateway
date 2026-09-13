@@ -134,6 +134,24 @@
       ]
     },
     {
+      "endpoint": "/api/integrations/transcription-factor/by-config",
+      "method": "POST",
+      "timeout": "60s",
+      "output_encoding": "no-op",
+      "extra_config": {},
+      "backend": [
+        {
+          "url_pattern": "/integrations/transcription-factor/by-config",
+          "host": [
+            "http://integrations:8080"
+          ],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
       "endpoint": "/api/config-and-control/networks",
       "method": "POST",
       "output_encoding": "no-op",
@@ -142,7 +160,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -182,7 +200,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -222,7 +240,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -269,7 +287,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -309,7 +327,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -349,7 +367,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -389,7 +407,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -429,7 +447,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -469,7 +487,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -509,7 +527,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -549,7 +567,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -581,6 +599,46 @@
       ]
     },
     {
+      "endpoint": "/api/config-and-control/pipelines/{id}/regenerate-aligned-objects",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "extra_config": {
+        "auth/validator": {
+          "alg": "RS256",
+          "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
+          "cache": true,
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
+          "disable_jwk_security": true,
+          "propagate_claims": [
+            [
+              "sub",
+              "x-user-id"
+            ],
+            [
+              "realm_access.roles",
+              "x-user-roles"
+            ]
+          ]
+        }
+      },
+      "input_headers": [
+        "Content-Type",
+        "x-user-id",
+        "x-user-roles"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/config-and-control/pipelines/{id}/regenerate-aligned-objects",
+          "host": [
+            "http://config-and-control:8080"
+          ],
+          "encoding": "no-op",
+          "sd": "static",
+          "disable_host_sanitize": false
+        }
+      ]
+    },
+    {
       "endpoint": "/api/config-and-control/pipelines/search-config",
       "method": "PUT",
       "output_encoding": "no-op",
@@ -589,7 +647,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -629,7 +687,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -677,7 +735,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -717,7 +775,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -757,7 +815,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -797,7 +855,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -845,7 +903,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -886,7 +944,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -926,7 +984,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -1026,7 +1084,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -1066,7 +1124,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
@@ -1106,7 +1164,7 @@
           "alg": "RS256",
           "jwk_url": "http://keycloak-biopatternsg:8080/realms/biopatternsg/protocol/openid-connect/certs",
           "cache": true,
-          "issuer": "https://bioai.redclara.net/realms/biopatternsg",
+          "issuer": "https://biopatternsg.duckdns.org/realms/biopatternsg",
           "disable_jwk_security": true,
           "propagate_claims": [
             [
