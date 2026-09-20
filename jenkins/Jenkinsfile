@@ -16,6 +16,9 @@ pipeline {
                     
                     def localImageName = "${CONTAINER_NAME}:latest"
 
+                    echo "--- Updating JWT issuer in krakend.json to https://${env.PUBLIC_DOMAIN} ---"
+                    sh "sed -i 's|https://[^/\" ]*/realms/biopatternsg|https://${env.PUBLIC_DOMAIN}/realms/biopatternsg|g' krakend.json"
+
                     echo "--- Building Local Docker Image: ${localImageName} ---"
                     sh "docker build -t ${localImageName} ."
                     echo "--- Docker image built successfully! ---"
